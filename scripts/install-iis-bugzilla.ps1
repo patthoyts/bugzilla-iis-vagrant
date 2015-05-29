@@ -34,7 +34,7 @@ if (!(Test-Path $SiteDir)) {
     if (Test-Path "C:\Vagrant\extensions") {
         Push-Location $SiteDir
         Get-ChildItem "C:\Vagrant\extensions" `
-            | %{ Extract-Zip $_.FullName (Join-Path "$SiteDir\extensions" $_.BaseName) }
+            | %{ Extract-Zip $_.FullName "$SiteDir\extensions" }
         Pop-Location
     }
 }
