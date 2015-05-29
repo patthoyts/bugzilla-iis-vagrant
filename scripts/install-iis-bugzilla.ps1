@@ -89,10 +89,10 @@ $am = "`$answer{'urlbase'} = '';"
 $ar = "`$answer{'urlbase'} = 'http://localhost/$($SiteName)';"
 $bm = "`$answer{'cookiepath'} = '/';"
 $br = "`$answer{'cookiepath'} = '/$($SiteName)/';"
-Get-Content "C:\Vagrant\Scripts\bugzilla.responses" `
-    | %{ $_.Replace($am,$ar).Replace($bm,$br) } > "C:\bugzilla.responses"
+Get-Content "C:\tmp\initial.responses" `
+    | %{ $_.Replace($am,$ar).Replace($bm,$br) } > "C:\tmp\bugzilla.responses"
 Start-Process -FilePath $PerlExe -WorkingDirectory $SiteDir -Wait -NoNewWindow `
-    -ArgumentList '-w checksetup.pl "c:\bugzilla.responses" --verbose'
+    -ArgumentList '-w checksetup.pl "c:\tmp\bugzilla.responses" --verbose'
 
 function update-acl ($path, $account, $access)
 {
