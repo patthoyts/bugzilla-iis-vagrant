@@ -20,6 +20,7 @@ $answer{'interdiffbin'} = '';
 $answer{'urlbase'} = '';
 $answer{'cookiepath'} = '/';
 $answer{'mail_delivery_method'} = 'Test';
+$answer{'font_file'} = '';
 $answer{'webdotbase'} = '';
 $answer{'ADMIN_EMAIL'} = 'admin@example.com';
 $answer{'ADMIN_PASSWORD'} = 'password';

@@ -86,7 +86,7 @@ if (!(Test-Path "IIS:\Sites\Default Web Site\$SiteName")) {
 # Run Bugzilla's checksetup script to configure the application
 # Subsitute the urlbase and cookie param values to match this installation.
 $am = "`$answer{'urlbase'} = '';"
-$ar = "`$answer{'urlbase'} = 'http://localhost/$($SiteName)';"
+$ar = "`$answer{'urlbase'} = 'http://localhost/$($SiteName)/';"
 $bm = "`$answer{'cookiepath'} = '/';"
 $br = "`$answer{'cookiepath'} = '/$($SiteName)/';"
 Get-Content "C:\tmp\initial.responses" `
