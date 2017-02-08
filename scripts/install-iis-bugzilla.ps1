@@ -4,7 +4,7 @@ $SiteUser = "IIS APPPOOL\$PoolName"
 $SiteDir = "C:\$SiteName"
 $PerlExe = (Get-Command perl).Definition
 $GitExe = (Get-Command git).Definition
-$BugzillaRepo = 'http://git.mozilla.org/bugzilla/bugzilla'
+$BugzillaRepo = 'http://github.com/bugzilla/bugzilla'
 $BugzillaBranch = 'master' #'release-4.4-stable'
 
 function Extract-Zip ($file, $destination) {
@@ -93,6 +93,8 @@ Get-Content "C:\tmp\initial.responses" `
     | %{ $_.Replace($am,$ar).Replace($bm,$br) } > "C:\tmp\bugzilla.responses"
 Start-Process -FilePath $PerlExe -WorkingDirectory $SiteDir -Wait -NoNewWindow `
     -ArgumentList '-w checksetup.pl "c:\tmp\bugzilla.responses" --verbose'
+Start-Process -FilePath $PerlExe -WorkingDirectory $SiteDir -Wait -NoNewWindow `
+    -ArgumentList '-w checksetup.pl "c:\tmp\bugzilla.responses"'
 
 function update-acl ($path, $account, $access)
 {

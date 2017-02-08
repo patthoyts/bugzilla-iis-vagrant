@@ -1,6 +1,7 @@
 $answer{'create_htaccess'} = 0;
 $answer{'webservergroup'} = '';
 $answer{'use_suexec'} = 0;
+$answer{'db_from_env'} = 0;
 $answer{'db_driver'} = 'sqlite';
 $answer{'db_host'} = 'localhost';
 $answer{'db_sock'} = '';
@@ -22,6 +23,8 @@ $answer{'cookiepath'} = '/';
 $answer{'mail_delivery_method'} = 'Test';
 $answer{'font_file'} = '';
 $answer{'webdotbase'} = '';
+$answer{'apache_size_limit'} = 250000;
+$answer{'ADMIN_LOGIN'} = 'admin';
 $answer{'ADMIN_EMAIL'} = 'admin@example.com';
 $answer{'ADMIN_PASSWORD'} = 'password';
 $answer{'ADMIN_REALNAME'} = 'Admin';
